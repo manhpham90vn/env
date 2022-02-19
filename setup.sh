@@ -8,10 +8,8 @@ PACKAGES=(
     mitmproxy
     rbenv
     openvpn
-)
-
-RUBY_GEMS=(
     cocoapods
+    xcodegen
 )
 
 CASKS=(
@@ -28,14 +26,14 @@ if test ! $(which brew); then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
+echo "Config XCode..."
+sudo xcode-select -switch /Applications/Xcode.app
+
 echo "Updating homebrew..."
 brew update
 
 echo "Installing packages..."
 brew install ${PACKAGES[@]}
-
-echo "Installing Ruby gems"
-sudo gem install ${RUBY_GEMS[@]}
 
 echo "Installing cask apps..."
 brew install --cask ${CASKS[@]}
