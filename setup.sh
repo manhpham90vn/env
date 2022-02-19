@@ -42,6 +42,7 @@ brew install --cask ${CASKS[@]}
 
 echo "Configuring OS..."
 defaults write com.apple.Finder AppleShowAllFiles true
+git config --global credential.helper osxkeychain
 killall Finder
 
 echo "Macbook setup completed!"
