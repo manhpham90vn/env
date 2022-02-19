@@ -10,6 +10,8 @@ PACKAGES=(
     openvpn
     cocoapods
     xcodegen
+    carthage
+    swiftgen
 )
 
 CASKS=(
