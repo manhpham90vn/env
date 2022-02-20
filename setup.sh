@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -e
 
+# fix install ruby with rbenv
+# RUBY_CFLAGS="-Wno-error=implicit-function-declaration" rbenv install 2.6.5
+
 PACKAGES=(
     mint
     robotsandpencils/made/xcodes
@@ -11,7 +14,6 @@ PACKAGES=(
     cocoapods
     xcodegen
     carthage
-    swiftgen
 )
 
 CASKS=(
@@ -40,9 +42,18 @@ brew install ${PACKAGES[@]}
 echo "Installing cask apps..."
 brew install --cask ${CASKS[@]}
 
+if ! [ -d ~/.oh-my-zsh ]; then
+	echo "Installing oh-my-zsh"
+    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
+
+echo "Configuring git..."
+git config --global user.name "Manh Pham"
+git config --global user.email "manhpham90vn@icloud.com"
+git config --global credential.helper osxkeychain
+
 echo "Configuring OS..."
 defaults write com.apple.Finder AppleShowAllFiles true
-git config --global credential.helper osxkeychain
 killall Finder
 
 echo "Macbook setup completed!"
