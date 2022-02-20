@@ -11,6 +11,8 @@ PACKAGES=(
     cocoapods
     xcodegen
     carthage
+    openssl
+    libxml2
 )
 
 CASKS=(
