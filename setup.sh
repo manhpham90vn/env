@@ -22,6 +22,11 @@ CASKS=(
 
 echo "Starting setup"
 
+if ! [ -d ~/.oh-my-zsh ]; then
+	echo "Installing oh-my-zsh"
+    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
+
 if test ! $(which brew); then
     echo "Installing homebrew..."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -38,11 +43,6 @@ brew install ${PACKAGES[@]}
 
 echo "Installing cask apps..."
 brew install --cask ${CASKS[@]}
-
-if ! [ -d ~/.oh-my-zsh ]; then
-	echo "Installing oh-my-zsh"
-    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-fi
 
 echo "Configuring git..."
 git config --global user.name "Manh Pham"
