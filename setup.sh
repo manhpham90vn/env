@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 set -e
 
-# fix install ruby with rbenv
-# RUBY_CFLAGS="-Wno-error=implicit-function-declaration" rbenv install 2.6.5
-
 PACKAGES=(
     mint
     robotsandpencils/made/xcodes
