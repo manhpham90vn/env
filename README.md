@@ -1,5 +1,3 @@
-# env
-
 ## config .zshrc file
 ```shell
 # Homebrew
