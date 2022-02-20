@@ -5,9 +5,7 @@ PACKAGES=(
     mint
     robotsandpencils/made/xcodes
     swiftlint
-    mitmproxy
     rbenv
-    openvpn
     cocoapods
     xcodegen
     carthage
