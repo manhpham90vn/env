@@ -18,6 +18,8 @@ CASKS=(
     google-chrome 
     sourcetree 
     visual-studio-code
+    openvpn-connect
+    charles
 )
 
 echo "Starting setup"
