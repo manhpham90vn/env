@@ -4,7 +4,7 @@
 ```shell
 RUBY_CFLAGS="-Wno-error=implicit-function-declaration" rbenv install 2.6.5
 ```
-## comfig .zshrc file
+## config .zshrc file
 ```shell
 # Homebrew
 export PATH=/opt/homebrew/bin:$PATH
