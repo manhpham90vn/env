@@ -34,7 +34,7 @@ fi
 if [ $(uname -m) == "arm64" ]; then
     BREW_CMD="/opt/homebrew/bin/brew"
 else
-    BREW_CMD="/usr/local/Homebrew/bin"
+    BREW_CMD="/usr/local/Homebrew/bin/brew"
 fi
 
 if ! [ -e $BREW_CMD ]; then
