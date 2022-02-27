@@ -20,6 +20,7 @@ CASKS=(
     visual-studio-code
     openvpn-connect
     charles
+    android-studio
 )
 
 echo "Starting setup"
@@ -30,7 +31,13 @@ if ! [ -d ~/.oh-my-zsh ]; then
     exit
 fi
 
-if test ! $(which brew); then
+if [ $(uname -m) == "arm64" ]; then
+    BREW_CMD="/opt/homebrew/bin/brew"
+else
+    BREW_CMD="/usr/local/Homebrew/bin"
+fi
+
+if ! [ -e $BREW_CMD ]; then
     echo "Installing homebrew..."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     exit
@@ -40,13 +47,13 @@ echo "Config XCode..."
 sudo xcode-select -switch /Applications/Xcode.app
 
 echo "Updating homebrew..."
-brew update
+$BREW_CMD update
 
 echo "Installing packages..."
-brew install ${PACKAGES[@]}
+$BREW_CMD install ${PACKAGES[@]}
 
 echo "Installing cask apps..."
-brew install --cask ${CASKS[@]}
+$BREW_CMD install --cask ${CASKS[@]}
 
 echo "Configuring git..."
 git config --global user.name "Manh Pham"
