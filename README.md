@@ -1,4 +1,4 @@
-## config .zshrc file mac arm64
+## config .zshrc file for mac arm64
 ```shell
 # Homebrew
 export PATH=/opt/homebrew/bin:$PATH
@@ -23,7 +23,7 @@ export PKG_CONFIG_PATH="/opt/homebrew/opt/libxml2/lib/pkgconfig"
 export PATH="/opt/homebrew/opt/libxml2/bin:$PATH"
 ```
 
-## config .zshrc file mac x86_64
+## config .zshrc file for mac x86_64
 ```shell
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
