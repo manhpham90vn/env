@@ -64,4 +64,7 @@ echo "Configuring OS..."
 defaults write com.apple.Finder AppleShowAllFiles true
 killall Finder
 
+echo "Configuring XCodes..."
+defaults write com.apple.dt.Xcode ShowBuildOperationDuration YES
+
 echo "Macbook setup completed!"
