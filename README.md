@@ -28,3 +28,9 @@ export PATH="/opt/homebrew/opt/libxml2/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 ```
+
+## alias
+```shell
+alias arm="env /usr/bin/arch -arm64 /bin/zsh --login"
+alias intel="env /usr/bin/arch -x86_64 /bin/zsh --login"
+```
