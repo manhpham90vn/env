@@ -2,21 +2,14 @@
 set -e
 
 PACKAGES=(
-    mint
-    robotsandpencils/made/xcodes
-    swiftlint
-    rbenv
     cocoapods
     xcodegen
     carthage
-    openssl
-    libxml2
 )
 
 CASKS=(
-    iterm2 
-    google-chrome 
-    sourcetree 
+    google-chrome
+    sourcetree
     visual-studio-code
     openvpn-connect
     charles
@@ -24,12 +17,6 @@ CASKS=(
 )
 
 echo "Starting setup"
-
-if ! [ -d ~/.oh-my-zsh ]; then
-	echo "Installing oh-my-zsh"
-    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-    exit
-fi
 
 if [ $(uname -m) == "arm64" ]; then
     BREW_CMD="/opt/homebrew/bin/brew"
