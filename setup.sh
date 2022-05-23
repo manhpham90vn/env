@@ -2,6 +2,7 @@
 set -e
 
 PACKAGES=(
+    swiftlint
     cocoapods
     xcodegen
     carthage
